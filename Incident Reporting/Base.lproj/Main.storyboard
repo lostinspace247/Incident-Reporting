@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B2S-eg-sk8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Incident_Reporting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u0-UH-6re">
+                                <rect key="frame" x="16" y="424" width="343" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="View JSQWebView Incident Reporting"/>
+                                <connections>
+                                    <action selector="goToJSQIncidentReporting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VM2-du-2CT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-4Y-dW4">
+                                <rect key="frame" x="25" y="232" width="324" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="View Incident Reporting"/>
+                                <connections>
+                                    <action selector="goToIncidents:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SoC-AE-CMM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IFM-aM-H13"/>
+                    <connections>
+                        <segue destination="iBL-V6-QPd" kind="show" identifier="viewIncidentReporting" id="jJ5-ih-jZ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="384.55772113943033"/>
+        </scene>
+        <!--Incident Reporting-->
+        <scene sceneID="Ds1-vB-XE9">
+            <objects>
+                <viewController id="iBL-V6-QPd" customClass="IncidentReportingViewController" customModule="Incident_Reporting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fA1-LG-qsU"/>
+                        <viewControllerLayoutGuide type="bottom" id="NIS-23-gsn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hZT-Nx-SkE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I3T-6h-3vz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhU-uY-Yts">
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JhU-uY-Yts" firstAttribute="top" secondItem="I3T-6h-3vz" secondAttribute="bottom" constant="3" id="1KO-si-c92"/>
+                            <constraint firstItem="I3T-6h-3vz" firstAttribute="leading" secondItem="hZT-Nx-SkE" secondAttribute="leading" id="65s-2M-xQo"/>
+                            <constraint firstItem="JhU-uY-Yts" firstAttribute="leading" secondItem="I3T-6h-3vz" secondAttribute="leading" id="9ox-Qt-q5S"/>
+                            <constraint firstAttribute="trailing" secondItem="I3T-6h-3vz" secondAttribute="trailing" id="FE8-Iq-GWG"/>
+                            <constraint firstItem="I3T-6h-3vz" firstAttribute="top" secondItem="fA1-LG-qsU" secondAttribute="bottom" id="W9y-7t-vnW"/>
+                            <constraint firstItem="I3T-6h-3vz" firstAttribute="top" secondItem="fA1-LG-qsU" secondAttribute="bottom" id="ecs-ct-cGU"/>
+                            <constraint firstItem="JhU-uY-Yts" firstAttribute="trailing" secondItem="I3T-6h-3vz" secondAttribute="trailing" id="khZ-oA-2Mw"/>
+                            <constraint firstItem="JhU-uY-Yts" firstAttribute="bottom" secondItem="NIS-23-gsn" secondAttribute="top" id="xpg-CY-puS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Incident Reporting" id="9V5-Q1-rQX">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="rcu-aO-12V">
+                            <connections>
+                                <action selector="done:" destination="iBL-V6-QPd" id="7zX-IW-LgE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="incidentReportingWebView" destination="JhU-uY-Yts" id="8AB-fP-jhD"/>
+                        <outlet property="progressBar" destination="I3T-6h-3vz" id="4Hy-16-JyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vc7-HS-hz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="-49"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JKW-wY-xKp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B2S-eg-sk8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fY3-jC-pA4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DT5-Ij-9au"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ky4-Ty-vla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.40000000000001" y="384.55772113943033"/>
+        </scene>
+    </scenes>
+</document>
